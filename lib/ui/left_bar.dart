@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class LeftBar extends StatelessWidget {
-  LeftBar({
+  const LeftBar({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff223E6D),
+      color: const Color(0xff223E6D),
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: const [
           InkWell(
               child: Align(
                   widthFactor: 1,

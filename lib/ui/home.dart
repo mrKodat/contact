@@ -23,7 +23,7 @@ class _MyHomePageState extends State<HomePage> {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Expanded(flex: 1, child: LeftBar()),
+          const Expanded(flex: 1, child: LeftBar()),
           Expanded(flex: 4, child: Container())
         ],
       ),
