@@ -9,7 +9,24 @@ class LeftBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xff223E6D),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          InkWell(
+              child: Align(
+                  widthFactor: 1,
+                  alignment: Alignment.centerLeft,
+                  child: CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Color(0xffFEB25B),
+                    child: Text(
+                      "+",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  )))
+        ],
+      ),
     );
   }
 }
