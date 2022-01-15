@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862256046787",
+    "project_id": "contact-837db",
+    "storage_bucket": "contact-837db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862256046787:android:c6c331b28285af33f53876",
+        "android_client_info": {
+          "package_name": "com.siateknoloji.contact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862256046787-uieirv8q2qji1erblvfr3h0l8b72q4sg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPpp_es6kBOgSC9PhpjhCKdMTA7dBNS6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862256046787-uieirv8q2qji1erblvfr3h0l8b72q4sg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

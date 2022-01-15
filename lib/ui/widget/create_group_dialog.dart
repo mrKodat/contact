@@ -1,3 +1,5 @@
+import 'package:contact/core/add_contact.dart';
+import 'package:contact/core/contact_model.dart';
 import 'package:flutter/material.dart';
 
 class CreateGroupDialog extends StatelessWidget {
@@ -30,6 +32,7 @@ class CreateGroupDialog extends StatelessWidget {
   }
 
   contentBox(context) {
+    final businessName = TextEditingController();
     return Stack(
       children: <Widget>[
         Container(
@@ -55,10 +58,29 @@ class CreateGroupDialog extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Text(
-                alertContent,
-                style: const TextStyle(fontSize: 14),
-                textAlign: TextAlign.center,
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Color.fromRGBO(0, 0, 0, 0.1),
+                          offset: Offset(1, 1),
+                          blurRadius: 1.0,
+                          spreadRadius: 1.0),
+                    ]),
+                child: TextField(
+                  controller: businessName,
+                  textAlign: TextAlign.center,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    hintText: ".. ",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 22,
@@ -73,7 +95,15 @@ class CreateGroupDialog extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                   ),
                   onPressed: () {
-                    tap();
+                    Navigator.of(context).pop();
+                    ContactModel model = ContactModel(
+                        userId: "",
+                        name: "",
+                        surName: "",
+                        userEmail: "",
+                        phoneNumber: "");
+                    AddContactMethods()
+                        .addContact(model.toJson(), businessName.text);
                   },
                   child: Text(buttonText),
                 ),

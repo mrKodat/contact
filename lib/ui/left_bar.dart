@@ -1,3 +1,5 @@
+import 'package:contact/core/add_contact.dart';
+import 'package:contact/core/contact_model.dart';
 import 'package:contact/ui/widget/create_group_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +41,11 @@ class LeftBar extends StatelessWidget {
                     );
                   });
             },
-          )
+          ),
+          Expanded(
+              child: ListView(
+            children: [],
+          ))
         ],
       ),
     );
