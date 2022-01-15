@@ -1,14 +1,20 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:contact/core/group_model.dart';
 
-// class AddNotesMethods {
- 
+class ListGroupMethods {
+  CollectionReference contact = FirebaseFirestore.instance.collection('group');
 
-//   Future<void> addNotes(contactData, groupName) {
-//      CollectionReference contact =
-//       FirebaseFirestore.instance.
-//     return contact
-//         .add(contactData)
-//         .then((value) => print("Contact Added"))
-//         .catchError((error) => print("Failed to add user: $error"));
-//   }
-// }
+  Stream<List<GroupModel>> listGroup() {
+    List<GroupModel> list = [];
+
+    return contact.snapshots().map((QuerySnapshot querySnapshot) {
+      list = querySnapshot.docs
+          .map((document) => GroupModel.fromSnapshot(document))
+          .toList()
+          .cast<GroupModel>();
+      print(list.length);
+      print(list[0].name);
+      return list;
+    });
+  }
+}

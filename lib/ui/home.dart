@@ -1,4 +1,5 @@
 import 'package:contact/ui/left_bar.dart';
+import 'package:contact/ui/screens/all_contact.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +25,7 @@ class _MyHomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           const Expanded(flex: 1, child: LeftBar()),
-          Expanded(flex: 4, child: Container())
+          Expanded(flex: 4, child: AllContact())
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:contact/core/add_contact.dart';
+import 'package:contact/core/add_group.dart';
 import 'package:contact/core/contact_model.dart';
 import 'package:flutter/material.dart';
 
@@ -96,14 +97,8 @@ class CreateGroupDialog extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).pop();
-                    ContactModel model = ContactModel(
-                        userId: "",
-                        name: "",
-                        surName: "",
-                        userEmail: "",
-                        phoneNumber: "");
-                    AddContactMethods()
-                        .addContact(model.toJson(), businessName.text);
+
+                    AddGroupMethods().addGroup(businessName.text);
                   },
                   child: Text(buttonText),
                 ),
@@ -111,17 +106,6 @@ class CreateGroupDialog extends StatelessWidget {
             ],
           ),
         ),
-        // Positioned(
-        //   left: 20,
-        //   right: 20,
-        //   child: CircleAvatar(
-        //     backgroundColor: Colors.transparent,
-        //     radius: 45,
-        //     child: ClipRRect(
-        //         borderRadius: BorderRadius.all(Radius.circular(45)),
-        //         child: Image.asset("assets/flag.png")),
-        //   ),
-        // ),
       ],
     );
   }
